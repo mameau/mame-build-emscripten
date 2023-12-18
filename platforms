@@ -1,0 +1,21 @@
+PLATFORMS=(
+  ## ARCADE
+  #pacman^src/mame/pacman/pacman.cpp
+  #blktiger^src/mame/capcom/blktiger.cpp
+  #1943^src/mame/capcom/1943.cpp
+  #vr^src/mame/sega/model1.cpp
+  ## COMPUTERS
+  #apple2gs^src/mame/apple/apple2gs.cpp
+  #c64p^src/mame/commodore/c64.cpp
+  #ct486^src/mame/pc/ct486.cpp
+  ## CONSOLE
+  #psu^src/mame/sony/psx.cpp
+  #coleco^src/mame/coleco/coleco.cpp
+  megadriv^src/mame/sega/megadriv.cpp,src/mame/sega/mdconsole.cpp
+  #sms^src/mame/sega/sms.cpp
+  #nes^src/mame/nintendo/nes.cpp
+  #gba^src/mame/nintendo/gba.cpp
+  #n64^src/mame/nintendo/n64.cpp
+  #snes^src/mame/nintendo/snes.cpp
+  #gamecube^src/mame/nintendo/gamecube.cpp
+  )

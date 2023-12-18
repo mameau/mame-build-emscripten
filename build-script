@@ -1,0 +1,30 @@
+#!/bin/sh
+
+EMSCRIPTEN_VERSION=${1:-3.1.25}
+
+cd /opt/app/emsdk
+./emsdk activate $EMSCRIPTEN_VERSION
+source "/opt/app/emsdk/emsdk_env.sh"
+
+REPO=https://github.com/mamedev/mame.git
+PLATFORMS=()
+source $(dirname $0)/platforms
+
+cd $HOME
+if [ ! -f mame/.git/config ]
+then
+  git clone $REPO
+fi
+cd $HOME/mame
+git pull origin master
+git checkout $(git tag | tail -n1)
+
+for PLATFORM in ${PLATFORMS[@]}
+do
+  SUBTARGET=$(echo $PLATFORM | cut -d"^" -f1)
+  SOURCES=$(echo $PLATFORM | cut -d"^" -f2)
+
+  emmake make clean
+  emmake make -j$(nproc) SUBTARGET=${SUBTARGET} SOURCES=${SOURCES} -Wfastcomp -WError 2>&1 | tee ${SUBTARGET}.log
+
+done
