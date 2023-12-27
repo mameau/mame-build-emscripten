@@ -11,11 +11,18 @@ PLATFORMS=(
   ## CONSOLE
   #psu^src/mame/sony/psx.cpp
   #coleco^src/mame/coleco/coleco.cpp
-  megadriv^src/mame/sega/megadriv.cpp,src/mame/sega/mdconsole.cpp
+  #megadriv^src/mame/sega/megadriv.cpp,src/mame/sega/mdconsole.cpp
   #sms^src/mame/sega/sms.cpp
+  smspal^src/mame/sega/sms.cpp
   #nes^src/mame/nintendo/nes.cpp
   #gba^src/mame/nintendo/gba.cpp
   #n64^src/mame/nintendo/n64.cpp
   #snes^src/mame/nintendo/snes.cpp
   #gamecube^src/mame/nintendo/gamecube.cpp
+  #daytona^src/mame/sega/model2.cpp
+  #zerogun^src/mame/sega/model2.cpp
+  #model2^src/mame/sega/model2.cpp
+  #sc3000^src/mame/sega/sg1000.cpp
+  ##at586x3^src/mame/pc/atpci.cpp
+  #at586^src/mame/pc/atpci.cpp
   )
